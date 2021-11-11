@@ -4,3 +4,8 @@ body {
     background-size:cover;
     color: aliceblue;
 }
+
+#brand {
+    height: 10%;
+    width: 10%;
+}
