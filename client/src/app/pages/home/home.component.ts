@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BasePageComponent } from 'src/app/partials/base-page/base-page.component';
+import { TournamentService } from 'src/app/services/tournament.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,10 @@ export class HomeComponent extends BasePageComponent implements OnInit {
     super(route);
   }
 
+  constructor(private tournamentService:TournamentService) { }
+
   ngOnInit(): void {
+    this.tounaments = this.tournamentService.onGet();
   }
 
 }

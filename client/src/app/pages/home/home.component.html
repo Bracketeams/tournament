@@ -1,2 +1,18 @@
-<p>Home works!</p>
+<div class="container mt-5">
+    <h2>List of Tournaments</h2>
+    <table class="table">
+        <thead>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Entry</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tournament of tournaments">
+                <td>{{ tournament.id }}</td>
+                <td>{{ tournament.title }}</td>
+                <td>{{ tournament.entry }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <app-base-page></app-base-page>
