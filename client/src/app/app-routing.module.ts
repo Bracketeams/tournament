@@ -4,7 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 
 // Routing goes here.
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent, data: {title: 'Home'}},
   {path: '', redirectTo: "/home", pathMatch: 'full'}
 ];
 
