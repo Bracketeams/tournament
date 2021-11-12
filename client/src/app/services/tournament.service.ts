@@ -25,6 +25,13 @@ export class TournamentService {
     }
 
     onAdd(tournament: Tournament) {
-        this.tournaments.push(Tournament);
+        this.tournaments.push(tournament);
     }
+
+    onDelete(id: Number) {
+        let tournament = this.tournaments.find(x => x.id === id);
+        let index = this.tournaments.indexOf(tournament,0);
+        this.tournaments.splice(index,1);
+    }
+
 }
