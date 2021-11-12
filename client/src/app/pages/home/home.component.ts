@@ -20,4 +20,8 @@ export class HomeComponent extends BasePageComponent implements OnInit {
     this.tounaments = this.tournamentService.onGet();
   }
 
+  onDelete(id: Number) {
+    this.tournamentService.onDelete(id);
+  }
+
 }

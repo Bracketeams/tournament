@@ -7,6 +7,7 @@ import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
+import { EditComponent } from './pages/home/edit/edit.component';
 
 @NgModule({
   declarations: [
