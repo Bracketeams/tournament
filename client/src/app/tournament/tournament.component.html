@@ -1,0 +1,19 @@
+<!-- Actual component content -->
+<div class="container" style="background-color: rgb(255, 255, 255); color: black;">
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">title</th>
+            <th scope="col">entry</th>
+          </tr>
+        </thead>ss
+        <tbody>
+          <tr *ngFor='let tournament of tournaments'>
+            <th scope="row">{{ tournament._id }}</th>
+            <td>{{ tournament.title }}</td>
+            <td>{{ tournament.entry }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
