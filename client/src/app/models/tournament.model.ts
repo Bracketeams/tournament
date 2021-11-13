@@ -1,5 +1,8 @@
+// This is the tournament data model.
 export class Tournament {
-    public id: number;
-    public title: string;
-    public entry: string[];
+    constructor(
+        public _id?: number,
+        public title?: string,
+        public entry?: string[]
+    ) { }
 }
