@@ -1,3 +1,4 @@
+<!--
 <div class="container mt-5">
     <h2>List of Tournaments</h2>
     <a routerLink="tournament/add/0" class="btn btn-primary">Add Tournament</a>
@@ -8,6 +9,7 @@
             <th>Entry</th>
             <th></th>
         </thead>
+        
         <tbody>
             <tr *ngFor="let tournament of tournaments">
                 <td>{{ tournament.id }}</td>
@@ -17,6 +19,8 @@
                 <td><button (click)="onDelete(tournament.id)">x</button></td>
             </tr>
         </tbody>
+        
     </table>
 </div>
+-->
 <app-base-page></app-base-page>
