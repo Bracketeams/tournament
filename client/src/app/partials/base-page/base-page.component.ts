@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router'; // This import allows us to co
 })
 export class BasePageComponent implements OnInit {
   title: string | undefined;
+  description: string | undefined;
   private route: ActivatedRoute;
 
   constructor(route: ActivatedRoute) { 
@@ -16,6 +17,7 @@ export class BasePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = this.route.snapshot.data.title;
+    this.description = this.route.snapshot.data.description;
   }
 
 }
