@@ -54,15 +54,21 @@
               "node_modules/datatables.net-dt/css/jquery.dataTables.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "src/content/styles.css"
+              "./node_modules/boxicons/css/boxicons.min.css",
+              "./node_modules/animate.css/animate.min.css",
+              "./node_modules/hover.css/css/hover-min.css","src/content/app.css",
+              "src/content/style.css",
+              "src/content/registration.css",
+              "src/content/contact-style.css",
+              "src/content/service-style.css",
+              "src/content/styles.css",
+              "src/content/home-style.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/datatables.net/js/jquery.dataTables.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
-              "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/scripts/app.js"
+              "src/scripts/app.js",
+              "src/scripts/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {

@@ -1,8 +1,22 @@
+<!-- CSS Section -->
+<link rel="stylesheet" type="text/css" href="http://getbootstrap.com/examples/navbar/navbar.css">
+
+<!-- CSS Section for Animation and Hover Animation and Icons in Business Contact-->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+<!-- CSS Section for Table in Business Contact-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="../../../assets/images/Team Logo.png" id="brand"></a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -17,36 +31,39 @@
                 <li class="nav-item dropdown">
 
                     <!-- Dropdown menu display text -->
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Tournaments
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Tournaments
                     </a>
 
                     <!-- Actual dropdown menu -->
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">Create new tournament</a></li>
                         <li><a class="dropdown-item" href="/tournaments">View all tournaments</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
                 <li *ngIf='isLoggedIn()' class="nav-item ml-5 " [routerLinkActive]="['active']">
-                    <a class="nav-link text-warning" routerLink="/admin/main"><i class="fas fa-lg fa-user-shield"></i> Admin </a>
-                  </li>
-          
-                  <li *ngIf='isLoggedIn()'
-                      class="navbar-text text-success ml-5 mr-5 d-none d-lg-inline">
-                      <i class="fas fa-lg fa-user"></i> Welcome, {{ user.displayName }}
-                  </li>
-          
-          
-                  <li *ngIf='isLoggedIn()' class="nav-item">
+                    <a class="nav-link text-warning" routerLink="/admin/main"><i class="fas fa-lg fa-user-shield"></i>
+                        Admin </a>
+                </li>
+
+                <li *ngIf='isLoggedIn()' class="navbar-text text-success ml-5 mr-5 d-none d-lg-inline">
+                    <i class="fas fa-lg fa-user"></i> Welcome, {{ user.displayName }}
+                </li>
+
+
+                <li *ngIf='isLoggedIn()' class="nav-item">
                     <a (click)='onLogoutClick()' routerLink='/logout' class="nav-link" href="/login">
-                      <i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
-                  </li>
-          
-                  <li *ngIf='!isLoggedIn()' class="nav-item">
+                        <i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
+                </li>
+
+                <li *ngIf='!isLoggedIn()' class="nav-item">
                     <a class="nav-link" routerLink="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
-                  </li>
+                </li>
             </ul>
         </div>
     </div>
