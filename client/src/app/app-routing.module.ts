@@ -7,6 +7,8 @@ import { TournamentComponent } from './tournament/tournament.component';
 const routes: Routes = [
   {path: 'login', data: {title: 'Login'}, redirectTo: '/admin/auth', pathMatch: 'full'},
 
+  {path: 'register', data: {title: 'Login'}, redirectTo: '/admin/registration', pathMatch: 'full'},
+
   // Home page routing.
   {path: 'home', component: HomeComponent, data: {title: 'Home',
                                                   description: 'Welcome to bracketeams!'}},

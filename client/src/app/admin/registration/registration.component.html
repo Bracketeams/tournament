@@ -1,0 +1,104 @@
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+                <!-- Message Area -->
+                <div class="bg-danger mt-2 p-2 text-center text-white"
+                *ngIf='errorMessage != null'>
+                {{ errorMessage }}
+                 </div>
+                        
+                        <div class="container register">
+                            <div class="row">
+                                <div class="col-md-3 register-left">
+                                    <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                                    <h3>Welcome</h3>
+                                    <p>You are already registered? Please login</p>
+                                    <a href="/login" ><input type="submit" class="btn-get-started animate__animated animate__bounce hvr-buzz-out" name="" value="Login" /><br /></a>
+                                    
+                                </div>
+                                <div class="col-md-9 register-right">
+                                    
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                            aria-labelledby="home-tab">
+                                            <h3 class="register-heading">Sign Up</h3>
+                                            <form autocomplete='off' #form='ngForm' (ngSubmit)='register(form)'>                                                <div class="row register-form">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Full Name*" 
+                                                                [(ngModel)]='user.displayName'
+                                                                name="displayName"
+                                                                id="displayName" value="" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="User Name *" name="username" id="username" [(ngModel)]='user.username'
+                                                                value="" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control"
+                                                            [(ngModel)]='user.password'
+                                                            placeholder="Password *" name="password" id="password"
+                                                                value="" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control"
+                                                                placeholder="Confirm Password *" value="" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="maxl">
+                                                                <label class="radio inline">
+                                                                    <input type="radio" name="gender" [(ngModel)]='user.gender' value="male"
+                                                                        checked>
+                                                                    <span> Male </span>
+                                                                </label>
+                                                                <label class="radio inline">
+                                                                    <input type="radio" [(ngModel)]='user.gender' name="gender" value="female">
+                                                                    <span>Female </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control"
+                                                            [(ngModel)]='user.email'
+                                                            placeholder="Your Email *" name="email" id="email"
+                                                                value="" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text"
+                                                            [(ngModel)]='user.phone'
+                                                            name="phone" class="form-control"
+                                                                placeholder="Your Phone *" value="" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <select class="form-control"  [(ngModel)]='user.question' name="question">
+                                                                <option class="hidden" selected disabled>Please select
+                                                                    your
+                                                                    Sequrity Question
+                                                                </option>
+                                                                <option>What is your Birthdate?</option>
+                                                                <option>What is Your old Phone Number</option>
+                                                                <option>What is your Pet Name?</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="answer"
+                                                            [(ngModel)]='user.answer'
+                                                            placeholder="Enter Your Answer *" value="" />
+                                                        </div>
+                                                        <input type="submit" class="btnRegister hvr-buzz-out" value="Register" />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+            </div>
+        </section>
+        <!-- End Services Section -->
+        <section id="services" class="services section-bg" style="padding-top: 0px;"></section>

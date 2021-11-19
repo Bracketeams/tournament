@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
+import { RegistrationComponent } from './registration/registration.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin.component';
 import { TournamentEditorComponent } from './tournament-editor/tournament-editor.component';
@@ -10,6 +11,7 @@ import { TournamentTableComponent } from './tournament-table/tournament-table.co
 
 const routing = RouterModule.forChild([
   { path: 'auth', component: AuthComponent },
+  { path: 'registration', component: RegistrationComponent},
   { path: 'main', component: AdminComponent, canActivate: [AuthGuard],
    children: [
       { path: 'Tournaments/:mode/:id', component: TournamentEditorComponent, data: {title: 'Edit Tournament'}, canActivate: [AuthGuard]},
@@ -23,6 +25,6 @@ const routing = RouterModule.forChild([
 @NgModule({
   imports: [CommonModule, FormsModule, routing],
   providers: [AuthGuard],
-  declarations: [AuthComponent, AdminComponent, TournamentEditorComponent, TournamentTableComponent]
+  declarations: [AuthComponent, RegistrationComponent, AdminComponent, TournamentEditorComponent, TournamentTableComponent]
 })
 export class AdminModule {}

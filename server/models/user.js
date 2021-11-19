@@ -12,15 +12,30 @@ let User = mongoose.Schema
             trim: true,
             required: 'username is required'
         },
-        /*
-        password: 
+        
+        phone: 
         {
             type: String,
-            default: '';
+            default: '',
             trim: true,
-            required: 'password is required'
-        }
-        */
+            required: 'phone is required'
+        },
+        question: 
+        {
+            type: String,
+            default: '',
+            trim: true,
+            required: 'question is required'
+        },
+        answer: 
+        {
+            type: String,
+            default: '',
+            trim: true,
+            required: 'answer is required'
+        },
+        
+        
        email: 
        {
             type: String,
@@ -28,12 +43,12 @@ let User = mongoose.Schema
             trim: true,
             required: 'email address is required'
        },
-       phone: 
+       gender: 
        {
-           type: String,
-           default: '',
-           trim: true,
-           required: 'phone is required'
+            type: String,
+            default: '',
+            trim: true,
+            required: 'gender is required'
        },
        displayName: 
        {
