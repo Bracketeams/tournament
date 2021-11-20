@@ -6,6 +6,8 @@ import { AuthComponent } from './auth/auth.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin.component';
+import { DataTablesModule } from "angular-datatables";
+
 import { TournamentEditorComponent } from './tournament-editor/tournament-editor.component';
 import { TournamentTableComponent } from './tournament-table/tournament-table.component';
 
@@ -23,7 +25,7 @@ const routing = RouterModule.forChild([
 ]);
 
 @NgModule({
-  imports: [CommonModule, FormsModule, routing],
+  imports: [CommonModule, FormsModule,DataTablesModule, routing],
   providers: [AuthGuard],
   declarations: [AuthComponent, RegistrationComponent, AdminComponent, TournamentEditorComponent, TournamentTableComponent]
 })

@@ -4,17 +4,20 @@ export class Tournament
   constructor(
     // tslint:disable-next-line: variable-name
     public _id?: number,
-    public title?: string,
-    public entry?: string[],
+    public name?: string,
+    public location?: string,
+    public startDate ?: Date,
+    public endDate ?: Date,
+    public numberOfRounds ?: String
   ){}
 
   public toString(): string
   {
     return `
-    Book
+    Tournament
     -------------------------------
-    title       : ${this.title}
-    entry       : ${this.entry}
+    name       : ${this.name}
+    lcoation       : ${this.location}
     -------------------------------
     `;
   }
