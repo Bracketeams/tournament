@@ -7,11 +7,15 @@ import { TournamentRepository } from 'src/app/models/tournament.repository';
   templateUrl: './tournament-table.component.html'
 })
 export class TournamentTableComponent implements OnInit {
-
+  dtOptions: DataTables.Settings = {};
   constructor(private repository: TournamentRepository,
               private router: Router) { }
 
   ngOnInit(): void {
+    this.dtOptions = {
+      pageLength: 5,
+      processing: true
+    };
   }
 
   getTournaments(): Tournament[]

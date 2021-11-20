@@ -41,10 +41,10 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
     let newTournament = Tournament({
         "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
-        "description": req.body.description,
-        "price": req.body.price
+        "location": req.body.location,
+        "startDate": req.body.startDate,
+        "endDate": req.body.endDate,
+        "numberOfRounds": req.body.numberOfRounds
     });
 
     Tournament.create(newTournament, (err, newTournament) =>{
@@ -92,10 +92,10 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedtournament = Tournament({
         "_id": id,
         "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
-        "description": req.body.description,
-        "price": req.body.price
+        "location": req.body.location,
+        "startDate": req.body.startDate,
+        "endDate": req.body.endDate,
+        "numberOfRounds": req.body.numberOfRounds
     });
 
     Tournament.updateOne({_id: id}, updatedtournament, (err) => {

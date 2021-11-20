@@ -3,10 +3,10 @@ let mongoose = require('mongoose');
 // create a model class
 let tournamentModel = mongoose.Schema({
     name: String,
-    author: String,
-    published: String,
-    description: String,
-    price: Number
+    location: String,
+    startDate: String,
+    endDate: String,
+    numberOfRounds: Number
 },
 {
     collection: "tournaments"

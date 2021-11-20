@@ -1,35 +1,65 @@
-<table id="dtBasicExample" style="background-color: whitesmoke;" class="table dtBasicExample table-striped table-bordered table-sm row-border hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Author</th>
-      <th>Published</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor='let t of getTournaments()'>
-      <td>{{ t.title }}</td>
-      <td>{{ t.author }}</td>
-      <td>{{ t.published }}</td>
-      <td>{{ t.description }}</td>
-      <td>{{ t.price | currency: 'USD': 'symbol': '2.2-2'}}</td>
-      <td>
-        <button class="btn btn-sm btn-primary m-1" (click)='editTournament(t._id)'>
-          <i class="fas fa-pencil-alt"></i> Edit
-        </button>
-      </td>
-      <td>
-        <button class="btn btn-sm btn-danger m-1" (click)='deleteTournament(t._id)'>
-          <i class="fas fa-trash-alt"></i> Delete
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<button class="btn btn-primary" (click)='addTournament()'>
-  <i class="fas fa-plus-circle"></i> Add New Book
-</button>
+<!-- Main Content -->
+<section id="services" class="services section-bg" style="padding-top: 0px;">
+  <div class="container register" data-aos="fade-up">
+    <div class="row">
+        <div class="col-md-3 register-left">
+          <img
+            src="../../../assets/images/Team Logo.png" />
+          <h3>Tournament</h3>
+          <p>You want to add new Tournament</p>
+         <input type="submit" (click)='addTournament()'
+              class="btn-get-started animate__animated animate__bounce hvr-buzz-out" name=""
+              value="Add Tournament" /><br />
+
+        </div>
+          <div class="col-md-9 register-right">
+
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <form method="POST" autocomplete="off">
+                  <div class="row register-form" style="
+                                  padding-top: 50px;
+                                  margin-top: 0px;
+                              ">
+                    <table id="dtBasicExample" datatable [dtOptions]="dtOptions" class="table hover cell-border order-column stripe">
+                      <!-- Header Row-->
+                      <thead>
+                        <tr>
+                          <th>Title</th>
+                          <th>Start Date</th>
+                          <th>End Date</th>
+                          <th>No of Rounds</th>
+                          <th>Location</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor='let t of getTournaments()'>
+                          <td>{{ t.name }}</td>
+                          <td>{{ t.startDate }}</td>
+                          <td>{{ t.numberOfRounds }}</td>
+                          <td>{{ t.endDate }}</td>
+                          <td>{{ t.location}}</td>
+                          <td>
+                            <button class="btn btn-sm btn-primary m-1" (click)='editTournament(t._id)'>
+                              <i class="fas fa-pencil-alt"></i> Edit
+                            </button>
+                          </td>
+                          <td>
+                            <button class="btn btn-sm btn-danger m-1" (click)='deleteTournament(t._id)'>
+                              <i class="fas fa-trash-alt"></i> Delete
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</section>
