@@ -13,7 +13,7 @@ import { TournamentTableComponent } from './tournament-table/tournament-table.co
 
 const routing = RouterModule.forChild([
   { path: 'auth', component: AuthComponent },
-  { path: 'registration', component: RegistrationComponent},
+  { path: 'register', component: RegistrationComponent},
   { path: 'main', component: AdminComponent, canActivate: [AuthGuard],
    children: [
       { path: 'Tournaments/:mode/:id', component: TournamentEditorComponent, data: {title: 'Edit Tournament'}, canActivate: [AuthGuard]},
