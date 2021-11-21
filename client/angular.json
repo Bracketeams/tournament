@@ -41,7 +41,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Bracketeams",
+            "outputPath": "../public",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,7 +57,6 @@
               "./node_modules/boxicons/css/boxicons.min.css",
               "./node_modules/animate.css/animate.min.css",
               "./node_modules/hover.css/css/hover-min.css","src/content/app.css",
-              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
               "src/content/style.css",
               "src/content/registration.css",
               "src/content/contact-style.css",
@@ -79,8 +78,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5000kb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
