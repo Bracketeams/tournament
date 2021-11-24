@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { data } from 'jquery';
 import { AuthService } from '../../models/auth.service';
 
 import { User } from '../../models/user.model';
@@ -31,7 +30,7 @@ export class RegistrationComponent implements OnInit
         if (data.success)
         {
           this.auth.storeUserData(data.token, data.user);
-          this.router.navigateByUrl('admin/main');
+          this.router.navigateByUrl('/admin/main/Tournaments');
         }
         else{
           this.errorMessage = data.msg;
