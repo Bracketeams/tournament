@@ -32,6 +32,9 @@ export class AuthComponent implements OnInit
           this.auth.storeUserData(data.token, data.user);
           this.router.navigateByUrl('admin/main');
         }
+        else{
+          this.errorMessage = data.msg;
+        }
       });
     }
     else
