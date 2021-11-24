@@ -52,7 +52,6 @@ export class RestDataSource {
   logout(): Observable<any> {
     this.authToken = null;
     this.user = null;
-    console.log('cleasing')
     localStorage.clear();
 
     return this.http.get<any>(this.baseUrl + 'logout', this.httpOptions);
@@ -60,7 +59,6 @@ export class RestDataSource {
 
   loggedIn(): boolean {
     this.loadToken();
-    console.log(this.authToken)
     if (this.authToken)
       return !this.jwtService.isTokenExpired(this.authToken);
     else
@@ -83,10 +81,8 @@ export class RestDataSource {
   }
 
   private loadToken(): void {
-    console.log("loadToken", localStorage);
     if (localStorage.length > 0) {
       const token = localStorage.getItem('id_token');
-      console.log("loadToken", token);
       this.authToken = token;
       this.httpOptions.headers = this.httpOptions.headers.set('Authorization', this.authToken);
 

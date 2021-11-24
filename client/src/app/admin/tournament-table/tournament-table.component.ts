@@ -23,6 +23,7 @@ export class TournamentTableComponent implements OnInit {
 
   getTournaments(): Tournament[] {
     this.tournaments = this.repository.getTournaments();
+
     return this.tournaments;
   }
 
