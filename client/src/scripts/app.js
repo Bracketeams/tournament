@@ -11,7 +11,9 @@
 
 setTimeout(function () {
     $(function () {
-      $('#dtBasicExample').DataTable();
+      $('#dtBasicExample').DataTable({"pageLength": 5,
+      "processing": true,
+      "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]});
     });
   }, 3000);
   
