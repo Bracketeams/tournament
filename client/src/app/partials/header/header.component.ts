@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
     {
       this.user = JSON.parse(localStorage.getItem('user'));
     }
+    console.log(result)
     return result;
   }
 

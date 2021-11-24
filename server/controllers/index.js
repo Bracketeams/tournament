@@ -60,7 +60,7 @@ module.exports.processLoginPage = (req, res, next) => {
         if(!user)
         {
             req.flash('loginMessage', 'Authentication Error');
-            return res.redirect('/login');
+            res.json({success: false, msg: req.flash('loginMessage')});
         }
         req.login(user, (err) => {
             // server error?
@@ -151,8 +151,24 @@ module.exports.processRegisterPage = (req, res, next) => {
             /* TODO - Getting Ready to convert to API
             res.json({success: true, msg: 'User Registered Successfully!'});
             */
+            const payload = 
+            {
+                id: newUser._id,
+                displayName: newUser.displayName,
+                username: newUser.username,
+                email: newUser.email
+            }
 
-            return res.json({success: true, msg: 'User Registered Successfully!'});
+            const authToken = jwt.sign(payload, DB.Secret, {
+                expiresIn: 604800 // 1 week
+            });
+            
+            return res.json({success: true, msg: 'User Registered Successfully!', user: {
+                id: newUser._id,
+                displayName: newUser.displayName,
+                username: newUser.username,
+                email: newUser.email
+            }, token: authToken});
         }
   
     });

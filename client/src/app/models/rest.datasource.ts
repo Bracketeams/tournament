@@ -30,7 +30,7 @@ export class RestDataSource
   {
     this.user = new User();
      //this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/api/`;
-     this.baseUrl = `https://comp229-f2020-week10.herokuapp.com/api/`;
+     this.baseUrl = `https://centennial-tournament.herokuapp.com/api/`;
   }
 
   getTournaments(): Observable<Tournament[]>
@@ -51,6 +51,7 @@ export class RestDataSource
   storeUserData(token: any, user: User): void
   {
     localStorage.setItem('id_token', 'Bearer ' + token);
+    console.log('Bearer ' + token)
     localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;
     this.user = user;
@@ -67,7 +68,11 @@ export class RestDataSource
 
   loggedIn(): boolean
   {
+    console.log(this.authToken)
+    if(this.authToken)
     return !this.jwtService.isTokenExpired(this.authToken);
+    else
+    return false;
   }
 
   addTournament(tournament: Tournament): Observable<Tournament>
