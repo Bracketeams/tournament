@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import { Tournament } from 'src/app/models/tournament.model';
 import { TournamentRepository } from 'src/app/models/tournament.repository';
@@ -11,6 +10,7 @@ import { TournamentRepository } from 'src/app/models/tournament.repository';
 export class TournamentTableComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
+  tournaments: Tournament[]
   constructor(private repository: TournamentRepository,
     private router: Router) { }
   ngOnInit(): void {
@@ -22,8 +22,8 @@ export class TournamentTableComponent implements OnInit {
   }
 
   getTournaments(): Tournament[] {
-    const tournamentsArr =  this.repository.getTournaments();
-    return tournamentsArr;
+    this.tournaments = this.repository.getTournaments();
+    return this.tournaments;
   }
 
   deleteTournament(id: number): void {

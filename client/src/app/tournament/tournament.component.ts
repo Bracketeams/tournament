@@ -15,7 +15,6 @@ export class TournamentComponent {
    
   constructor(private repository: TournamentRepository) { }
   ngOnInit(): void {
-    this.tournaments = this.repository.getTournaments();
     this.dtOptions = {
       pageLength: 5,
       processing: true,
