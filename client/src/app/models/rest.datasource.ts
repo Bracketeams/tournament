@@ -68,7 +68,6 @@ export class RestDataSource
 
   loggedIn(): boolean
   {
-    console.log(this.authToken)
     if(this.authToken)
     return !this.jwtService.isTokenExpired(this.authToken);
     else
@@ -90,9 +89,6 @@ export class RestDataSource
   deleteTournament(id: number): Observable<Tournament>
   {
     this.loadToken();
-
-    console.log(id);
-
     return this.http.get<Tournament>(`${this.baseUrl}tournaments/delete/${id}`, this.httpOptions);
   }
 
