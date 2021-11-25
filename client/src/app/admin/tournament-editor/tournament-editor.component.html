@@ -16,25 +16,26 @@
     <!-- Location input -->
     <div class="form-group">
       <label>Location</label>
-      <input type="text" class="form-control" name="price" [(ngModel)]='tournament.location'>
+      <input type="text" class="form-control" name="location" [(ngModel)]='tournament.location'>
     </div>
 
     <!-- Start date input -->
     <div class="form-group">
-      <label>StartDate</label>
-      <input type="date" class="form-control" name="price" [(ngModel)]='tournament.startDate'>
+      <label>Start Date</label>
+      <input type="date" class="form-control"  datetime="yyyy-mm-dd" name="startDate" [(ngModel)]='tournament.startDate'>
+      
     </div>
 
     <!-- End date input -->
     <div class="form-group">
       <label>End Date</label>
-      <input type="date" class="form-control" name="price" [(ngModel)]='tournament.endDate'>
+      <input type="date" class="form-control" name="endDate" [(ngModel)]='tournament.endDate'>
     </div>
 
     <!-- Rounds input -->
     <div class="form-group">
       <label>Rounds</label>
-      <input type="number" class="form-control" name="price" [(ngModel)]='tournament.numberOfRounds'>
+      <input type="number" class="form-control" name="numberOfRounds" [(ngModel)]='tournament.numberOfRounds'>
     </div>
 
     <!-- Save/add button -->
