@@ -4,13 +4,25 @@
 }
 
 .custom-container {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.bottom-space {
+    padding-bottom: 100px;
+}
+
+.page-content {
+    padding: 15px;
+    border-radius: 0 0 5px 5px;
 }
 
 body {
+    background-color: aquamarine;
     background-image: url(../assets/images/background.png);
     background-size:cover;
-    color: aliceblue;
 }
 
+ng-component {
+    width: 100%;
+}
