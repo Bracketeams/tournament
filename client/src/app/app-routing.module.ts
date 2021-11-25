@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { TournamentComponent } from './tournament/tournament.component';
 
 // Routing goes here.
@@ -14,15 +15,14 @@ const routes: Routes = [
                                                   description: 'Welcome to bracketeams!'}},
 
   // Tournaments page routing.
-  {path: 'tournaments', component: TournamentComponent, data: {title: 'Tournaments',
-                                                                description: 'You can find all your tournaments here.'}},
+  {path: 'tournaments', component: TournamentsComponent, data: {title: 'Tournaments',
+                                                                description: 'You can find all user tournaments here.'}},
 
   // This routing makes sure that the default route when entering the website is the home page.
   {path: '', redirectTo: "/home", pathMatch: 'full'},
-  {path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)}
 
-  //{path: 'tournament/add/:id', component: EditComponent},
-  //{path: 'tournament/edit/:id', component: EditComponent}
+  // Admin module routing.
+  {path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)}
 ];
 
 @NgModule({

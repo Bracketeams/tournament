@@ -13,10 +13,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="../../../assets/images/Team Logo.png" id="brand"></a>
+        <a class="navbar-brand" href="#"><img src="../../../assets/images/Team Logo.png" id="brand" style="size: 30px;"></a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -24,7 +23,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <!-- Home button -->
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
                 </li>
 
                 <!-- Dropdown menu -->
@@ -38,31 +37,37 @@
 
                     <!-- Actual dropdown menu -->
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Create new tournament</a></li>
+
+                        <!-- If the user is not logged in, the "create tournament" button will redirect the user to the login page -->
+                        <li *ngIf='!isLoggedIn()'><a class="dropdown-item" href="/login">Create new tournament</a></li>
+                        <li *ngIf='isLoggedIn()'><a class="dropdown-item" href="/admin/main/Tournaments/add">Create new tournament</a></li>
                         <li><a class="dropdown-item" href="/tournaments">View all tournaments</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
-                <li *ngIf='isLoggedIn()' class="nav-item ml-5 " [routerLinkActive]="['active']">
-                    <a class="nav-link text-warning" routerLink="/admin/main"><i class="fas fa-lg fa-user-shield"></i>
+
+                <!-- Admin text -->
+                <li *ngIf='isLoggedIn()' class="nav-item" [routerLinkActive]="['active']">
+                    <a class="nav-link text-warning" href="/admin/main"><i class="fas fa-lg fa-user-shield"></i>
                         Admin </a>
                 </li>
 
-                <li *ngIf='isLoggedIn()' class="navbar-text text-success ml-5 mr-5 d-none d-lg-inline">
-                    <i class="fas fa-lg fa-user"></i> Welcome, {{ user.displayName }}
+                <!-- Welcome message -->
+                <li *ngIf='isLoggedIn()' class="navbar-text text-success d-lg-inline" style="padding: 10px 8px 10px 8px;">
+                    <div style="display: flex; flex-direction: row; align-items: center">
+                        <i class="fas fa-lg fa-user fa-1x"></i> 
+                        <div style="padding-left: 3px;">Welcome, {{ user.displayName }}</div>
+                    </div>
                 </li>
 
-
+                <!-- Logout button  -->
                 <li *ngIf='isLoggedIn()' class="nav-item">
                     <a (click)='onLogoutClick()' routerLink='/logout' class="nav-link" href="/login">
                         <i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
                 </li>
 
+                <!-- Login button -->
                 <li *ngIf='!isLoggedIn()' class="nav-item">
-                    <a class="nav-link" routerLink="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
+                    <a class="nav-link" href="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
                 </li>
             </ul>
         </div>

@@ -1,17 +1,32 @@
-<div class="container-fluid">
-  <div class="row"></div>
+<!-- Main Content -->
+<div class="container bottom-space">
 
-  <div class="row mt-2">
-    <div class="col-3">
+  <!-- Base page component -->
+  <app-base-page></app-base-page>
+
+  <!-- Actual page content -->
+  <div style="display: flex; flex-direction: row; background-color: rgb(255, 255, 255);" class="container page-content">
+
+    <!-- Left side -->
+    <div class="col-md-3 register-left" style="flex-grow: 1;">
+      <img src="../../../assets/images/Team Logo.png" style="background-color: #383d41c2; border-radius: 5px; margin-bottom: 15px;"/>
+
+      <!-- Add tournament button -->
       <button class="btn btn-outline-info btn-block"
-        routerLink='/admin/main/Tournament'
-        routerLinkActive='active'>
+              routerLink='/admin/main/Tournaments/add'
+              routerLinkActive='active'>
+        Add new tournament
+      </button>
+
+      <!-- Admin panel button -->
+      <button class="btn btn-outline-info btn-block"
+              routerLink='/admin/main/Tournament'
+              routerLinkActive='active'>
         Tournaments
       </button>
     </div>
-
-    <div class="col-9">
-      <router-outlet></router-outlet>
-    </div>
+    
+    <!-- Right side -->
+    <router-outlet></router-outlet>
   </div>
 </div>

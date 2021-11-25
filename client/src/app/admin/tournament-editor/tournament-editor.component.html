@@ -1,40 +1,50 @@
-<div class="bg-primary p-2 text-white"
-  [class.bg-warning]='editing'
-  [class.text-dark]='editing'>
-  <h5>{{ editing ? 'Edit' : 'Add'}} tournament</h5>
+<div id="editor">
+  <!-- Status bar -->
+  <div class="bg-primary p-2 text-white" [class.bg-warning]='editing' [class.text-dark]='editing' style="border-radius: 5px;">
+    <h5>{{ editing ? 'Edit' : 'Add'}} tournament</h5>
+  </div>
+
+  <!-- Form -->
+  <form novalidate #form='ngForm' (ngSubmit)='save(form)'>
+
+    <!-- Name input -->
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]='tournament.name'>
+    </div>
+
+    <!-- Location input -->
+    <div class="form-group">
+      <label>Location</label>
+      <input type="text" class="form-control" name="price" [(ngModel)]='tournament.location'>
+    </div>
+
+    <!-- Start date input -->
+    <div class="form-group">
+      <label>StartDate</label>
+      <input type="date" class="form-control" name="price" [(ngModel)]='tournament.startDate'>
+    </div>
+
+    <!-- End date input -->
+    <div class="form-group">
+      <label>End Date</label>
+      <input type="date" class="form-control" name="price" [(ngModel)]='tournament.endDate'>
+    </div>
+
+    <!-- Rounds input -->
+    <div class="form-group">
+      <label>Rounds</label>
+      <input type="number" class="form-control" name="price" [(ngModel)]='tournament.numberOfRounds'>
+    </div>
+
+    <!-- Save/add button -->
+    <button type='submit' class="btn btn-primary m-1" [class.btn-warning]='editing'>
+      <i class="{{editing ? 'fas fa-save' : 'fas fa-plus-circle' }}"></i> {{ editing ? "Save" : "Add" }}
+    </button>
+
+    <!-- Cancel button -->
+    <button type='reset' class="btn btn-secondary m-1" routerLink='/admin/main/books'>
+      <i class="fas fa-undo"></i> Cancel
+    </button>
+  </form>
 </div>
-<form novalidate #form='ngForm' (ngSubmit)='save(form)'>
-
-  <div class="form-group">
-    <label>Name</label>
-    <input type="text" class="form-control" name="name" [(ngModel)]='tournament.name'>
-  </div>
-
-  <div class="form-group">
-    <label>Location</label>
-    <input type="text" class="form-control" name="price" [(ngModel)]='tournament.location'>
-  </div>
-
-  <div class="form-group">
-    <label>StartDate</label>
-    <input type="date" class="form-control" name="price" [(ngModel)]='tournament.startDate'>
-  </div>
-
-  <div class="form-group">
-    <label>End Date</label>
-    <input type="date" class="form-control" name="price" [(ngModel)]='tournament.endDate'>
-  </div>
-
-  <div class="form-group">
-    <label>Rounds</label>
-    <input type="number" class="form-control" name="price" [(ngModel)]='tournament.numberOfRounds'>
-  </div>
-
-
-  <button type='submit' class="btn btn-primary m-1" [class.btn-warning]='editing'>
-    <i class="{{editing ? 'fas fa-save' : 'fas fa-plus-circle' }}"></i> {{ editing ? "Save" : "Add" }}
-  </button>
-  <button type='reset' class="btn btn-secondary" routerLink='/admin/main/books'>
-    <i class="fas fa-undo"></i> Cancel
-  </button>
-</form>

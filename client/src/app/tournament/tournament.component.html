@@ -1,41 +1,24 @@
-<section id="services" class="services section-bg" style="padding-top: 0px;">
-  <div class="container register" data-aos="fade-up">
-    <div class="row">
-          <div class="col-md-16 register-right">
+<table id="dtBasicExample" datatable="ng"  [dtTrigger]="dtTrigger" [dtOptions]="dtOptions" class="table hover cell-border order-column stripe">
+  
+  <!-- Table header -->
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Start Date</th>
+      <th>Number Of Rounds</th>
+      <th>End Date</th>
+      <th>Location</th>
+    </tr>
+  </thead>
 
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <form method="POST" autocomplete="off">
-                  <div class="row register-form" style="
-                                  padding-top: 50px;
-                                  margin-top: 0px;
-                              ">
-                    <table id="dtBasicExample" datatable="ng"  [dtTrigger]="dtTrigger" [dtOptions]="dtOptions" class="table hover cell-border order-column stripe">
-                      <!-- Header Row-->
-                      <thead>
-                        <tr>
-                          <th>Title</th>
-                          <th>Start Date</th>
-                          <th>Number Of Rounds</th>
-                          <th>End Date</th>
-                          <th>Location</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor='let t of gettournaments()'>
-                          <td>{{ t.name }}</td>
-                          <td>{{ t.startDate }}</td>
-                          <td>{{ t.numberOfRounds }}</td>
-                          <td>{{ t.endDate }}</td>
-                          <td>{{ t.location}}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-    </div>
-  </div>
-</section>
+  <!-- Table body -->
+  <tbody>
+    <tr *ngFor='let t of gettournaments()'>
+      <td>{{ t.name }}</td>
+      <td>{{ t.startDate }}</td>
+      <td>{{ t.numberOfRounds }}</td>
+      <td>{{ t.endDate }}</td>
+      <td>{{ t.location}}</td>
+    </tr>
+  </tbody>
+</table>
