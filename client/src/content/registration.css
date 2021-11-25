@@ -1,36 +1,29 @@
 .register{
-    background: -webkit-linear-gradient(left, #404044, #a0a0a0);
-    margin-top: 3%;
-    padding: 3%;
+    background-color: rgb(255, 255, 255);
 }
-
 
 .register-left{
     text-align: center;
     color: #fff;
-    margin-top: 4%;
 }
 .register-left input{
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
     width: 60%;
-    background: #f8f9fa;
-    font-weight: bold;
-    color: #383d41;
+    background: #383d41;
+    color: #ffffff;
     margin-top: 30%;
     margin-bottom: 3%;
     cursor: pointer;
 }
+
 .register-right{
-    background: #f8f9fa;
-    border-top-left-radius: 10% 50%;
-    border-bottom-left-radius: 10% 50%;
 }
-.register-left img{
-    margin-top: 15%;
-    margin-bottom: 5%;
-    width: 25%;
+
+.register-left i{
+    margin-top: 15px;
+    margin-bottom: 15px;
     -webkit-animation: mover 2s infinite  alternate;
     animation: mover 1s infinite  alternate;
 }

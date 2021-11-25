@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { BasePageComponent } from 'src/app/partials/base-page/base-page.component';
 
 @Component({
@@ -7,19 +6,11 @@ import { BasePageComponent } from 'src/app/partials/base-page/base-page.componen
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent extends BasePageComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
-  constructor(route: ActivatedRoute) { 
-    super(route);
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    
   }
 
-  /*
-  onDelete(id: Number) {
-    this.tournamentService.onDelete(id);
-  }
-  */
 }
