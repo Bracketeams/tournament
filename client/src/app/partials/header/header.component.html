@@ -39,9 +39,9 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                         <!-- If the user is not logged in, the "create tournament" button will redirect the user to the login page -->
-                        <li *ngIf='!isLoggedIn()'><a class="dropdown-item" href="/login">Create new tournament</a></li>
-                        <li *ngIf='isLoggedIn()'><a class="dropdown-item" href="/admin/main/Tournaments/add">Create new tournament</a></li>
-                        <li><a class="dropdown-item" href="/tournaments">View all tournaments</a></li>
+                        <li *ngIf='!isLoggedIn()'><a class="dropdown-item" href="/login">Create tournament</a></li>
+                        <li *ngIf='isLoggedIn()'><a class="dropdown-item" href="/admin/main/Tournaments/add">Create tournament</a></li>
+                        <li><a class="dropdown-item" href="/tournaments">View tournaments</a></li>
                     </ul>
                 </li>
 
