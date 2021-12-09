@@ -5,7 +5,7 @@
   <div class="row register-form" style="padding-top: 50px; margin-top: 0px;">
     
     <!-- Tournaments admin table -->
-    <table id="dtBasicExample" datatable="ng"  [dtTrigger]="dtTrigger" [dtOptions]="dtOptions" class="table hover cell-border order-column stripe">
+    <table id="dtBasicExample" (contentChanged)="reloadTable()" datatable="ng"  [dtTrigger]="dtTrigger" [dtOptions]="dtOptions" class="table hover cell-border order-column stripe">
       
       <!-- Table header -->
       <thead>

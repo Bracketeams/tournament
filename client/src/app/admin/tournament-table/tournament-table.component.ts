@@ -14,25 +14,20 @@ export class TournamentTableComponent implements OnInit {
   constructor(private repository: TournamentRepository,
     private router: Router) { }
   ngOnInit(): void {
+    console.log('TEST')
     this.dtOptions = {
       pageLength: 5,
       processing: true,
-      destroy: true,
       lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
     };
   }
 
   getTournaments(): Tournament[] {
     this.tournaments = this.repository.getTournaments();
-    setTimeout(function () {
-      $(function () {
-        $('#dtBasicExample').DataTable({"pageLength": 5,
-        "processing": true,
-        "destroy": true,
-        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]});
-      });
-    }, 3000);
     return this.tournaments;
+  }
+  reloadTable() : void{
+    window.location.reload();
   }
 
   deleteTournament(id: number): void {
