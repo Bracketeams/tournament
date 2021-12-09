@@ -13,6 +13,8 @@ setTimeout(function () {
     $(function () {
       $('#dtBasicExample').DataTable({"pageLength": 5,
       "processing": true,
+      "retrieve": true,
+      "bDestroy": true,
       "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]});
     });
   }, 3000);

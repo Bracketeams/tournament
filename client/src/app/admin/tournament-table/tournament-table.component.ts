@@ -17,13 +17,21 @@ export class TournamentTableComponent implements OnInit {
     this.dtOptions = {
       pageLength: 5,
       processing: true,
+      destroy: true,
       lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
     };
   }
 
   getTournaments(): Tournament[] {
     this.tournaments = this.repository.getTournaments();
-
+    setTimeout(function () {
+      $(function () {
+        $('#dtBasicExample').DataTable({"pageLength": 5,
+        "processing": true,
+        "destroy": true,
+        "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]});
+      });
+    }, 3000);
     return this.tournaments;
   }
 
@@ -44,4 +52,6 @@ export class TournamentTableComponent implements OnInit {
   editTournament(id: number): void {
     this.router.navigateByUrl('/admin/main/Tournaments/edit/' + id);
   }
+
+  
 }
