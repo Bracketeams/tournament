@@ -8,7 +8,8 @@ export class Tournament
     public location?: string,
     public startDate ?: Date,
     public endDate ?: Date,
-    public numberOfRounds ?: String
+    public numberOfRounds ?: String,
+    public winner ?: String
   ){}
 
   public toString(): string
