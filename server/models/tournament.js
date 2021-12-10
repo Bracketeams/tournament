@@ -6,7 +6,8 @@ let tournamentModel = mongoose.Schema({
     location: String,
     startDate: String,
     endDate: String,
-    numberOfRounds: Number
+    numberOfRounds: Number,
+    winner: String
 },
 {
     collection: "tournaments"
