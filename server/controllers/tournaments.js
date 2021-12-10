@@ -44,7 +44,8 @@ module.exports.processAddPage = (req, res, next) => {
         "location": req.body.location,
         "startDate": req.body.startDate,
         "endDate": req.body.endDate,
-        "numberOfRounds": req.body.numberOfRounds
+        "numberOfRounds": req.body.numberOfRounds,
+        "winner": req.body.winner
     });
 
     Tournament.create(newTournament, (err, newTournament) =>{
@@ -95,7 +96,8 @@ module.exports.processEditPage = (req, res, next) => {
         "location": req.body.location,
         "startDate": req.body.startDate,
         "endDate": req.body.endDate,
-        "numberOfRounds": req.body.numberOfRounds
+        "numberOfRounds": req.body.numberOfRounds,
+        "winner": req.body.winner
     });
 
     Tournament.updateOne({_id: id}, updatedtournament, (err) => {
